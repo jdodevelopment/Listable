@@ -8,7 +8,7 @@ Simply define the @ListableEntity Annotation in your POJO class, and @ListableFi
 ### Base Example
 
 **Your POJO class:**
-```
+```java
 @ListableEntity
 public class Product {
 
@@ -28,7 +28,7 @@ public class Product {
 ```
 
 **In your activity**
-```
+```java
 public class BaseExampleActivity extends AppCompatActivity {
 
     @Override
@@ -60,7 +60,7 @@ public class BaseExampleActivity extends AppCompatActivity {
 
 **Result:**
 
-![Base example](https://drive.google.com/open?id=1-UunLbpfqxSejTofAzBSr42qF__kcJ4P/preview)
+![base example](https://juanda.wnpower.host/base_example.jpg)
 
 ### Custom Item View Example
 
@@ -70,8 +70,7 @@ You can define your custom layout item like this:
 
 ``` item_product.xml ```
 
-```
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -105,8 +104,11 @@ You can define your custom layout item like this:
 
 ```
 
+![item product](https://juanda.wnpower.host/preview.jpg)
+
+
 **Your POJO class:**
-```
+```java
 @ListableEntity(layoutResource = R.layout.item_product)
 public class Product {
 
@@ -127,7 +129,7 @@ public class Product {
 ```
 
 **In your activity (Exactly the same of first example)**
-```
+```java
 public class CustomItemViewExampleActivity extends AppCompatActivity {
 
     @Override
@@ -159,7 +161,8 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 
 Result:
 
-![item_product.xml](https://drive.google.com/open?id=191mWpQjBSziuLWUxE65ndZzu8NGRipib/preview)
+![custom item example](https://juanda.wnpower.host/custom_item_example.jpg)
+
 
 ### Custom Formatter Example
 
@@ -171,7 +174,7 @@ You can do that in the following way:
 
 ``` item_product_with_price_and_stock.xml ```
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -248,11 +251,11 @@ You can do that in the following way:
 </LinearLayout>
 ```
 
-![item_product_with_price_and_stock.xml](https://drive.google.com/open?id=1tm_5gCUS5jPYKip5D5SbBQmeeekc8XMQ/preview)
+![custom item view](https://juanda.wnpower.host/preview2.jpg)
 
 
 **Your POJO class:**
-```
+```java
 @ListableEntity(layoutResource = R.layout.item_product_with_price_and_stock)
 public class Product {
 
@@ -276,7 +279,7 @@ public class Product {
 
 **In your activity (Exactly the same of first example)**
 
-```
+```java
 public class CustomItemViewExampleActivity extends AppCompatActivity {
 
     @Override
@@ -305,9 +308,8 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 }
 
 ```
-Result:
+Result: //TODO
 
-![Custom view example](https://drive.google.com/open?id=1-WvStaD-mxB_YrMWCQ_GMI51mgPq-MWK/preview)
 
 ### Create your Formatter Example
 
