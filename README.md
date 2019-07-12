@@ -2,7 +2,7 @@
 
 Simple, flexible, powerful. With this library you can easily list any entity in your application. 
 
-Simply define the @ListableEntity Annotation in your POJO class, and @ListableField in the fields you want to display.
+Simply define the **@ListableEntity** Annotation in your POJO class, and **@ListableField** in the fields you want to display.
 
 
 ## Base Example
@@ -107,7 +107,7 @@ You can define your custom layout item like this:
 ![item product](https://juanda.wnpower.host/preview.jpg)
 
 
-**Your POJO class:**
+**And set in your POJO class:**
 ```java
 @ListableEntity(layoutResource = R.layout.item_product)
 public class Product {
@@ -159,7 +159,7 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 
 ```
 
-Result:
+**Result:**
 
 ![custom item example](https://juanda.wnpower.host/custom_item_example.jpg)
 
@@ -254,7 +254,7 @@ You can do that in the following way:
 ![custom item view](https://juanda.wnpower.host/preview2.jpg)
 
 
-**Your POJO class:**
+**And set the formatter param in your fields that you want to format in your POJO class:**
 ```java
 @ListableEntity(layoutResource = R.layout.item_product_with_price_and_stock)
 public class Product {
@@ -308,7 +308,9 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 }
 
 ```
-Result:
+
+**Result:**
+
 ![custom_formatter_example](https://juanda.wnpower.host/custom_formatter_example.jpg)
 
 
@@ -353,11 +355,14 @@ public class StockFormatter implements ListableFormatter {
     }
 }
 ```
-And set the formatter param to the target field
+**And set the formatter param to the target field**
+
 ```java
-	@ListableField(viewResource = R.id.textViewStock, formatter = StockFormatter.class)
-	private int stock;
+    @ListableField(viewResource = R.id.textViewStock, formatter = StockFormatter.class)
+    private int stock;
 ```
-Result: 
+
+**Result:**
+
 ![stock_formatter](https://juanda.wnpower.host/stock_formatter.jpg)
 
