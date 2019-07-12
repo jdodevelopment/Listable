@@ -60,7 +60,7 @@ public class BaseExampleActivity extends AppCompatActivity {
 
 **Result:**
 
-![base example](https://juanda.wnpower.host/base_example.jpg)
+![base example](https://juanda.wnpower.host/base_exampl.jpg)
 
 ### Custom Item View Example
 
