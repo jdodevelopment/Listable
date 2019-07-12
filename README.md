@@ -5,7 +5,7 @@ Simple, flexible, powerful. With this library you can easily list any entity in 
 Simply define the @ListableEntity Annotation in your POJO class, and @ListableField in the fields you want to display.
 
 
-### Base Example
+## Base Example
 
 **Your POJO class:**
 ```java
@@ -60,9 +60,9 @@ public class BaseExampleActivity extends AppCompatActivity {
 
 **Result:**
 
-![base example](https://juanda.wnpower.host/base_example.jpg)
+![base example](https://juanda.wnpower.host/basic_example.jpg)
 
-### Custom Item View Example
+## Custom Item View Example
 
 You can define your custom layout item like this:
 
@@ -164,7 +164,7 @@ Result:
 ![custom item example](https://juanda.wnpower.host/custom_item_example.jpg)
 
 
-### Custom Formatter Example
+## Custom Formatter Example
 
 You can specify how the value of a field is formatted. For example a float can be formatted as currency or percent.
 You can do that in the following way:
@@ -308,12 +308,56 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 }
 
 ```
-Result: //TODO
+Result:
+![custom_formatter_example](https://juanda.wnpower.host/custom_formatter_example.jpg)
 
 
-### Create your Formatter Example
+## Create your Formatter Example
 
 You can define your custom formatters for Any type of View (TextView, ImageView, etc) 
 and type of value (Float, Date, etc ) implemtenting the interface ListableFormatter.
 
-//TODO
+```StockFormatter.java```
+
+```java
+public class StockFormatter implements ListableFormatter {
+
+
+    @Override
+    public void setValueInView(@NonNull View view, @NonNull Object value) {
+        TextView textView = (TextView) view;
+        Integer integerValue = (Integer) value;
+         if (integerValue > 0) {
+            textView.setText("In stock: " + integerValue);
+            textView.setTextColor(Color.BLACK);
+        } else {
+            textView.setText("Not in stock");
+            textView.setTextColor(Color.RED);
+        }
+    }
+
+    @Override
+    public void setNullInView(View view) {
+        TextView textView = (TextView) view;
+        textView.setText("-");
+    }
+
+    @Override
+    public boolean supportedViewType(View view) {
+        return view instanceof TextView;
+    }
+
+    @Override
+    public boolean supportedValueType(Object value) {
+        return value instanceof Integer;
+    }
+}
+```
+And set the formatter param to the target field
+```java
+	@ListableField(viewResource = R.id.textViewStock, formatter = StockFormatter.class)
+	private int stock;
+```
+Result: 
+![stock_formatter](https://juanda.wnpower.host/stock_formatter.jpg)
+
