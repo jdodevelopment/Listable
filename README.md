@@ -317,7 +317,7 @@ public class CustomItemViewExampleActivity extends AppCompatActivity {
 ## Create your Formatter Example
 
 You can define your custom formatters for Any type of View (TextView, ImageView, etc) 
-and type of value (Float, Date, etc ) implemtenting the interface ListableFormatter.
+and type of value (Float, Date, etc ) implemtenting the interface **ListableFormatter**.
 
 ```StockFormatter.java```
 
