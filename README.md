@@ -4,7 +4,16 @@ Simple, flexible, powerful. With this library you can easily list any entity in 
 
 Simply define the **@ListableEntity** Annotation in your POJO class, and **@ListableField** in the fields you want to display.
 
+## Instalation
 
+Add the dependency in your build.gradle
+
+``` 
+dependencies {
+	...
+	implementation 'ar.com.jdodevelopment:listable:0.0.1' 
+}
+```
 ## Base Example
 
 **Your POJO class:**
